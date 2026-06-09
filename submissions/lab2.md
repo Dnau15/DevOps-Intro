@@ -198,3 +198,5 @@ Previous HEAD position was cb89bb9 docs(store): comment the load() decode step
 Switched to branch 'bisect-quickn'
 Your branch is up to date with 'upstream/bug/bisect-me'.
 ```
+
+git bisect uses binary search. At each step it checks out the commit exactly halfway between the known good and known bad commit. This halves the search space with every step, so for N commits it takes at most log₂(N) steps to find the culprit. For example, with 128 commits between good and bad, bisect finds the offending commit in at most 7 steps instead of 127. This is exactly why bisect is powerful in large repositories. A regression buried 1000 commits deep is found in just 10 steps.
