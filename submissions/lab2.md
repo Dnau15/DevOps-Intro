@@ -110,3 +110,32 @@ HEAD is now at c932f37 wip(lab2): more progress
 ```
 After git reset --hard HEAD~2, the two commits become unreachable — no branch or tag points to them anymore. Normally git reflog still knows their SHAs, but if git gc had run in that window, it would have scanned for unreachable objects and deleted them from .git/objects/. The commits, their trees, and blobs would be permanently gone — reflog entry would still show the SHA, but git reset --hard <SHA> would fail with "fatal: ambiguous argument".
 
+
+## 2.2
+```
+git tag -v "v0.1.0-lab2-${USER}"
+object 272a4d82c5e3137594576a273834e5b994ed34f1
+type commit
+tag v0.1.0-lab2-dmitrijnaumov
+tagger Dmitrii <15dnau@gmail.com> 1781020288 +0300
+
+Lab 2 milestone — version control deep dive
+Good "git" signature for 15dnau@gmail.com with ED25519 key SHA256:k0n7/mx/uRX52s/zu9pxaN+h/IKnBJzcnuybJgthVkM
+```
+
+```
+git log --oneline --graph
+* e980939 (HEAD -> feature/lab2, origin/feature/lab2) task 1
+* 449b55a wip(lab2): more progress
+* 69e047f wip(lab2): start
+* c8d68dc docs(lab1): bonus submission
+* 5a5f5df (origin/main, origin/HEAD, main) docs: upstream moved while you worked
+* 272a4d8 (tag: v0.1.0-lab2-dmitrijnaumov) test: unsigned commit (should fail)
+*   846a7a7 Merge pull request #2 from Dnau15/feature/lab1
+|\
+| * 7247163 docs(lab1): task3
+| * 067b59f docs(lab1): finish submission
+| * 843a27f docs(lab1): start submission
+* | c2789ae docs: add PR template
+|/
+```
