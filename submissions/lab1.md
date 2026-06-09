@@ -91,3 +91,7 @@ For a project, stars are a signal of trust and relevance. Moreover, starring is 
 
 How following developers helps in team projects and professional growth
 Following your colleagues on GitHub gives you a low-noise feed of their activity 
+
+## Bonus
+![Bonus](lab1_bonus.png "lab1 bonus")
+Knight Capital's deploy day involved pushing untested code to production servers without proper controls - a process that took only 45 minutes to lose $440 million. With required signed commits on the production branch, every deployment would have been cryptographically tied to a specific engineer, making it immediately clear who pushed what and when. Branch protection with required pull requests would have forced at least one reviewer to approve the change before it reached production, likely catching the misconfiguration before deployment. Linear history requirement would have also made the sequence of changes transparent and auditable, turning a chaotic incident into a traceable, preventable event.
